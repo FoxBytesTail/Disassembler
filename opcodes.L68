@@ -1,0 +1,135 @@
+00000000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.15.04
+Created On: 5/2/2017 12:47:46 PM
+
+00000000                             1  getSize
+00000000                             2  
+00000000                             3  *----------------------------------------
+00000000                             4  * NOP
+00000000                             5  *----------------------------------------
+00000000  14FC 004E                  6  _NOP    MOVE.B  #'N',(A2)+  * load N
+00000004  14FC 004F                  7          MOVE.B  #'O',(A2)+  * load O
+00000008  14FC 0050                  8          MOVE.B  #'P',(A2)+  * load P
+0000000C                             9          
+0000000C                            10  *----------------------------------------
+0000000C                            11  * MOVE Data from source to destination
+0000000C                            12  *----------------------------------------
+0000000C  14FC 004D                 13  _MOVE   MOVE.B  #'M',(A2)+  * load M
+00000010  14FC 004F                 14          MOVE.B  #'O',(A2)+  * load O
+00000014  14FC 0056                 15          MOVE.B  #'V',(A2)+  * load V
+00000018  14FC 0045                 16          MOVE.B  #'E',(A2)+  * load E
+0000001C  14FC 002E                 17          MOVE.B  #'.',(A2)+  * load .
+00000020  4EB8 0000                 18          JSR     getSize     * get size
+00000024  0C03 0001                 19          CMPI.B  #%01,D3     * byte operation
+00000028  14FC 0042                 20          MOVE.B  #'B',(A2)+  * load B
+0000002C  0C03 0003                 21          CMPI.B  #%11,D3     * word operation
+00000030  14FC 0057                 22          MOVE.B  #'W',(A2)+  * load W
+00000034  0C03 0002                 23          CMPI.B  #%10,D3     * long operation
+00000038  14FC 004C                 24          MOVE.B  #'L',(A2)+  * load L
+0000003C                            25  *----------------------------------------
+0000003C                            26  * MOVEA
+0000003C                            27  *----------------------------------------        
+0000003C  14FC 004D                 28  _MOVEA  MOVE.B  #'M',(A2)+  * load M
+00000040  14FC 004F                 29          MOVE.B  #'O',(A2)+  * load O
+00000044  14FC 0056                 30          MOVE.B  #'V',(A2)+  * load V
+00000048  14FC 0045                 31          MOVE.B  #'E',(A2)+  * load E
+0000004C  14FC 0041                 32          MOVE.B  #'A',(A2)+  * load A
+00000050  14FC 002E                 33          MOVE.B  #'.',(A2)+  * load .
+00000054  4EB8 0000                 34          JSR     getSize     * get size
+00000058  0C03 0003                 35          CMPI.B  #%11,D3     * word operation
+0000005C  14FC 0057                 36          MOVE.B  #'W',(A2)+  * load W
+00000060  0C03 0002                 37          CMPI.B  #%10,D3     * long operation
+00000064  14FC 004C                 38          MOVE.B  #'L',(A2)+  * load L             
+00000068                            39          
+00000068                            40  *----------------------------------------
+00000068                            41  * MOVEQ
+00000068                            42  *----------------------------------------        
+00000068  14FC 004D                 43  _MOVEQ  MOVE.B  #'M',(A2)+  * load M
+0000006C  14FC 004F                 44          MOVE.B  #'O',(A2)+  * load O
+00000070  14FC 0056                 45          MOVE.B  #'V',(A2)+  * load V
+00000074  14FC 0045                 46          MOVE.B  #'E',(A2)+  * load E
+00000078  14FC 0051                 47          MOVE.B  #'Q',(A2)+  * load Q
+0000007C                            48  
+0000007C                            49  *----------------------------------------
+0000007C                            50  * MOVEM
+0000007C                            51  *----------------------------------------        
+0000007C  14FC 004D                 52  _MOVEM  MOVE.B  #'M',(A2)+  * load M
+00000080  14FC 004F                 53          MOVE.B  #'O',(A2)+  * load O
+00000084  14FC 0056                 54          MOVE.B  #'V',(A2)+  * load V
+00000088  14FC 0045                 55          MOVE.B  #'E',(A2)+  * load E
+0000008C  14FC 004D                 56          MOVE.B  #'M',(A2)+  * load M
+00000090  14FC 002E                 57          MOVE.B  #'.',(A2)+  * load .
+00000094  4EB8 0000                 58          JSR     getSize     * get size
+00000098  0C03 0000                 59          CMPI.B  #%0,D3      * word operation
+0000009C  14FC 0057                 60          MOVE.B  #'W',(A2)+  * load W
+000000A0  0C03 0001                 61          CMPI.B  #%1,D3      * long operation
+000000A4  14FC 004C                 62          MOVE.B  #'L',(A2)+  * load L
+000000A8                            63  
+000000A8                            64  *----------------------------------------
+000000A8                            65  * ADD
+000000A8                            66  *----------------------------------------
+000000A8  14FC 0041                 67  _ADD    MOVE.B  #'A',(A2)+  * load A
+000000AC  14FC 0044                 68          MOVE.B  #'D',(A2)+  * load D
+000000B0  14FC 0044                 69          MOVE.B  #'D',(A2)+  * load D
+000000B4  14FC 002E                 70          MOVE.B  #'.',(A2)+  * load .
+000000B8                            71  
+000000B8                            72  *----------------------------------------
+000000B8                            73  * ADDA
+000000B8                            74  *----------------------------------------
+000000B8  14FC 0041                 75  _ADDA   MOVE.B  #'A',(A2)+  * load A
+000000BC  14FC 0044                 76          MOVE.B  #'D',(A2)+  * load D
+000000C0  14FC 0044                 77          MOVE.B  #'D',(A2)+  * load D
+000000C4  14FC 0041                 78          MOVE.B  #'A',(A2)+  * load A
+000000C8  14FC 002E                 79          MOVE.B  #'.',(A2)+  * load .
+000000CC                            80  
+000000CC                            81  *----------------------------------------
+000000CC                            82  * ADDI
+000000CC                            83  *----------------------------------------
+000000CC  14FC 0041                 84  _ADDI   MOVE.B  #'A',(A2)+  * load A
+000000D0  14FC 0044                 85          MOVE.B  #'D',(A2)+  * load D
+000000D4  14FC 0044                 86          MOVE.B  #'D',(A2)+  * load D
+000000D8  14FC 0049                 87          MOVE.B  #'I',(A2)+  * load I
+000000DC  14FC 002E                 88          MOVE.B  #'.',(A2)+  * load .
+000000E0  4EB8 0000                 89          JSR     getSize     * get size
+000000E4  0C03 0000                 90          CMPI.B  #%00,D3     * byte operation
+000000E8  14FC 0042                 91          MOVE.B  #'B',(A2)+  * load B
+000000EC  0C03 0001                 92          CMPI.B  #%01,D3     * word operation
+000000F0  14FC 0057                 93          MOVE.B  #'W',(A2)+  * load W
+000000F4  0C03 0002                 94          CMPI.B  #%10,D3     * long operation
+000000F8  14FC 004C                 95          MOVE.B  #'L',(A2)+  * load L        
+000000FC                            96     
+000000FC                            97  *----------------------------------------
+000000FC                            98  * ADDQ
+000000FC                            99  *----------------------------------------     
+000000FC  14FC 0041                100  _ADDQ   MOVE.B  #'A',(A2)+  * load A
+00000100  14FC 0044                101          MOVE.B  #'D',(A2)+  * load D
+00000104  14FC 0044                102          MOVE.B  #'D',(A2)+  * load D
+00000108  14FC 0051                103          MOVE.B  #'Q',(A2)+  * load Q
+0000010C  14FC 002E                104          MOVE.B  #'.',(A2)+  * load .
+00000110  4EB8 0000                105          JSR     getSize     * get size
+00000114  0C03 0000                106          CMPI.B  #%00,D3     * byte operation
+00000118  14FC 0042                107          MOVE.B  #'B',(A2)+  * load B
+0000011C  0C03 0001                108          CMPI.B  #%01,D3     * word operation
+00000120  14FC 0057                109          MOVE.B  #'W',(A2)+  * load W
+00000124  0C03 0002                110          CMPI.B  #%10,D3     * long operation
+00000128  14FC 004C                111          MOVE.B  #'L',(A2)+  * load L        
+0000012C                           112          
+Line 113 WARNING: END directive missing, starting address not set
+
+No errors detected
+1 warning generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+GETSIZE             0
+_ADD                A8
+_ADDA               B8
+_ADDI               CC
+_ADDQ               FC
+_MOVE               C
+_MOVEA              3C
+_MOVEM              7C
+_MOVEQ              68
+_NOP                0
