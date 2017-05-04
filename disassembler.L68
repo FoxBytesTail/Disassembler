@@ -1,0 +1,84 @@
+00001000 Starting Address
+Assembler used: EASy68K Editor/Assembler v5.15.04
+Created On: 5/3/2017 11:31:37 PM
+
+00000000                             1  *-----------------------------------------------------------
+00000000                             2  * Title      :  Disassembler
+00000000                             3  * Written by :  Alvin, Max, Youngmin
+00000000                             4  * Date       :  4/28/17
+00000000                             5  * Description:  Main for disassembler
+00000000                             6  *-----------------------------------------------------------
+00001000                             7      ORG    $1000
+00001000                             8  START:                  ; first instruction of program
+00001000                             9  
+00001000                            10  * Put program code here
+00001000  4280                      11      CLR.L       D0
+00001002  4281                      12      CLR.L       D1
+00001004  4282                      13      CLR.L       D2
+00001006  4283                      14      CLR.L       D3
+00001008  4284                      15      CLR.L       D4
+0000100A  4286                      16      CLR.L       D6
+0000100C  4287                      17      CLR.L       D7
+0000100E                            18  
+0000100E  207C 00000000             19      MOVEA.L     #$0,A0
+00001014  227C 00000000             20      MOVEA.L     #$0,A1
+0000101A  247C 00000000             21      MOVEA.L     #$0,A2
+00001020  267C 00000000             22      MOVEA.L     #$0,A3
+00001026  287C 00000000             23      MOVEA.L     #$0,A4
+0000102C  2A7C 00000000             24      MOVEA.L     #$0,A5
+00001032  2C7C 00000000             25      MOVEA.L     #$0,A6
+00001038  2E7C 00000000             26      MOVEA.L     #$0,A7
+0000103E                            27  
+0000103E  2E79 00001084             28      MOVEA.L     STACK_INIT, A7
+00001044                            29      
+00001044                            30  **** TAKE USER INPUT *****
+00001044  43F9 00001088             31      LEA         MSG_INTRO,A1    ;DISPLAY PROMPT
+0000104A  103C 000D                 32      MOVE.B      #13,D0
+0000104E  4E4F                      33      TRAP        #15
+00001050                            34      
+00001050  43F9 000010A0             35      LEA         MSG_START,A1    ;REQUEST STARTING ADDRESS
+00001056  103C 000D                 36      MOVE.B      #13,D0
+0000105A  4E4F                      37      TRAP        #15
+0000105C  103C 0004                 38      MOVE.B      #4,D0           
+00001060  4E4F                      39      TRAP        #15
+00001062  13C1 000010DA             40      MOVE.B      D1,START_A
+00001068                            41  
+00001068  43F9 000010BE             42      LEA         MSG_END,A1      ;REQUEST ENDING ADDRESS
+0000106E  103C 000D                 43      MOVE.B      #13,D0
+00001072  4E4F                      44      TRAP        #15
+00001074  103C 0004                 45      MOVE.B      #4,D0
+00001078  4E4F                      46      TRAP        #15
+0000107A  13C1 000010DB             47      MOVE.B      D1,END_A
+00001080                            48  
+00001080                            49              
+00001080                            50      
+00001080                            51  
+00001080  FFFF FFFF                 52      SIMHALT             ; halt simulator
+00001084                            53  
+00001084                            54  * Put variables and constants here
+00001084= 00100000                  55  STACK_INIT  DC.L   $00100000
+00001088                            56  
+00001088= 57 65 6C 63 6F 6D ...     57  MSG_INTRO   DC.B   'Welcome to disassembler',0
+000010A0= 50 6C 65 61 73 65 ...     58  MSG_START   DC.B   'Please enter starting address',0
+000010BE= 50 6C 65 61 73 65 ...     59  MSG_END     DC.B   'Please enter ending address',0
+000010DA                            60  
+000010DA                            61  START_A     DS.B   1
+000010DB                            62  END_A       DS.B   1
+000010DC                            63      
+000010DC                            64      
+000010DC                            65      END    START        ; last line of source
+
+No errors detected
+No warnings generated
+
+
+SYMBOL TABLE INFORMATION
+Symbol-name         Value
+-------------------------
+END_A               10DB
+MSG_END             10BE
+MSG_INTRO           1088
+MSG_START           10A0
+STACK_INIT          1084
+START               1000
+START_A             10DA
